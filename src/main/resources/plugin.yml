@@ -1,0 +1,6 @@
+name: Withinity
+version: '${project.version}'
+main: me.vase.withinity.Withinity
+api-version: 1.19
+authors: [vase]
+description: Withinity plugin does something
