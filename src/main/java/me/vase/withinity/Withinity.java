@@ -1,7 +1,9 @@
 package me.vase.withinity;
 
+import me.vase.withinity.commands.CommandManager;
 import me.vase.withinity.listeners.ListenerManager;
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Withinity extends JavaPlugin {
@@ -19,6 +21,9 @@ public final class Withinity extends JavaPlugin {
         // Initialize ListenerManager
         ListenerManager listenerManager = new ListenerManager(this);
         getServer().getPluginManager().registerEvents(listenerManager, this);
+
+        //CommandExecutor commandExecutor = new CommandManager(this);
+       // getCommand().setExecutor(commandExecutor);
 
         // Plugin startup message
         Bukkit.getConsoleSender().sendMessage(startupMessage);

@@ -1,6 +1,6 @@
 package me.vase.withinity.listeners;
 
-import me.vase.withinity.listeners.world.JoinListener;
+import me.vase.withinity.listeners.world.JoinLeaveListener;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -14,7 +14,7 @@ public class ListenerManager implements Listener {
         this.pluginManager = plugin.getServer().getPluginManager();
 
         // Register listeners
-        registerListeners(new JoinListener());
+        registerListeners(new JoinLeaveListener());
     }
 
     public void registerListeners(Listener listener) {
