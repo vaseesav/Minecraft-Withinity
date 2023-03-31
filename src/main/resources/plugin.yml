@@ -4,3 +4,14 @@ main: me.vase.withinity.Withinity
 api-version: 1.19
 authors: [vase]
 description: Withinity plugin does something
+
+commands:
+  god:
+    description: get better
+    usage: /<command>
+    permission: withinity.god
+
+  test:
+    description: test tests test
+    usage: /<command>
+    permission: withinity.test
