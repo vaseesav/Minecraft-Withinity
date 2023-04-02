@@ -1,22 +1,28 @@
 package me.vase.withinity.commands;
 
-import me.vase.withinity.Withinity;
 import org.bukkit.command.CommandExecutor;
-import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CommandManager {
-    public static String commandName;
-    public static CommandExecutor commandExecutor;
+    private static Map<String, CommandExecutor> commands;
 
     public CommandManager() {
+        this.commands = new HashMap<>();
+
         // Register commands
         registerCommand("god", new GodModeCommand());
         registerCommand("test", new TestCommand());
     }
 
-    public void registerCommand(String name, CommandExecutor executor) {
-        // Get the command object from the plugin
-        commandName = name;
-        commandExecutor = executor;
+    private void registerCommand(String commandName, CommandExecutor commandExecutor) {
+        // Store the command executor in the map
+        commands.put(commandName, commandExecutor);
+    }
+
+    public static Map<String, CommandExecutor> getCommands() {
+        // return the commands
+        return commands;
     }
 }

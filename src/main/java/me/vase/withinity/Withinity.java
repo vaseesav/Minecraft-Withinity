@@ -3,11 +3,10 @@ package me.vase.withinity;
 import me.vase.withinity.commands.CommandManager;
 import me.vase.withinity.listeners.ListenerManager;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.PluginCommand;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Map;
 
 public final class Withinity extends JavaPlugin {
 
@@ -19,18 +18,23 @@ public final class Withinity extends JavaPlugin {
         // Plugin startup logic
         PLUGIN_NAME = getDescription().getName();
         PLUGIN_VERSION = getDescription().getVersion();
-        String startupMessage = String.format("[§2%s§f]: §2has successfully loaded version %s.", PLUGIN_NAME, PLUGIN_VERSION);
 
-        new CommandManager();
-        String commandName = CommandManager.commandName;;
-        CommandExecutor commandexec = CommandManager.commandExecutor;
+        String startupMessage = String.format("[§2%s§f]: §2has successfully loaded version %s.", PLUGIN_NAME, PLUGIN_VERSION);
+        ListenerManager listenerManager = new ListenerManager(this);
+        CommandManager commandManager = new CommandManager();
 
         // Initialize ListenerManager
-        ListenerManager listenerManager = new ListenerManager(this);
         getServer().getPluginManager().registerEvents(listenerManager, this);
 
         // Initialize CommandManager
-        getCommand(commandName).setExecutor(commandexec);
+        try {
+            Map<String, CommandExecutor> commands = commandManager.getCommands();
+            for (String name : commands.keySet()) {
+                getCommand(name).setExecutor(commands.get(name));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("An error happened during the registration process of the commands.", e);
+        }
 
         // Plugin startup message
         Bukkit.getConsoleSender().sendMessage(startupMessage);
