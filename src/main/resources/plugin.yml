@@ -7,11 +7,11 @@ description: Withinity plugin does something
 
 commands:
   god:
-    description: get better
+    description: Become invincible
     usage: /<command>
-    permission: withinity.god
+    permission: withinity.godCommand
 
   test:
     description: test tests test
     usage: /<command>
-    permission: withinity.test
+    permission: withinity.testCommand
