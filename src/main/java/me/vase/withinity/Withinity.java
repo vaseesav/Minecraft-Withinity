@@ -21,7 +21,7 @@ public final class Withinity extends JavaPlugin {
         PLUGIN_VERSION = getDescription().getVersion();
         String startupMessage = String.format("[§2%s§f]: §2has successfully loaded version %s.", PLUGIN_NAME, PLUGIN_VERSION);
 
-        new CommandManager(this);
+        new CommandManager();
         String commandName = CommandManager.commandName;;
         CommandExecutor commandexec = CommandManager.commandExecutor;
 

@@ -1,5 +1,7 @@
 package me.vase.withinity.commands;
 
+import org.bukkit.Color;
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,7 +13,9 @@ public class TestCommand implements CommandExecutor {
         if (commandSender instanceof Player) {
             Player p = (Player) commandSender;
 
-            p.setLevel(1337);
+                p.setDisplayName(Color.RED + p.getDisplayName());
+                p.setPlayerListName(Color.RED + p.getDisplayName());
+                p.setCustomName(Color.RED + p.getDisplayName());
         }
 
         return true;
