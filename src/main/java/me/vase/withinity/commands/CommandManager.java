@@ -9,6 +9,7 @@ public class CommandManager {
         // Register commands here:
         registerCommand("god", new GodModeCommand());
         registerCommand("test", new TestCommand());
+        registerCommand("setlevel", new SetLevelCommand());
     }
 
     public void registerCommand(String commandName, CommandExecutor commandExecutor) {

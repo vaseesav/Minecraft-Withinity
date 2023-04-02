@@ -11,7 +11,6 @@ import java.util.Map;
 
 public final class Withinity extends JavaPlugin {
     private static Withinity plugin;
-
     public static String PLUGIN_NAME;
     public static String PLUGIN_VERSION;
 

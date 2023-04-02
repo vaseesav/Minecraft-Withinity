@@ -15,3 +15,8 @@ commands:
     description: test tests test
     usage: /<command>
     permission: withinity.testCommand
+
+  setlevel:
+    description: Set your level
+    usage: /<command> <player> <level>
+    permission: withinity.setLevel
