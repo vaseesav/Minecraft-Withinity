@@ -21,7 +21,6 @@ public class ListenerManager implements Listener {
 
     public void registerListeners(Listener listener) {
         // Registers listeners to the plugin manager
-
         pluginManager.registerEvents(listener, plugin);
     }
 }
