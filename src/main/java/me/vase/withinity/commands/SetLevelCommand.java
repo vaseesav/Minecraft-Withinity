@@ -24,16 +24,12 @@ public class SetLevelCommand implements CommandExecutor {
                 } else {
                     try {
                         target.setLevel(Integer.parseInt(args[1]));
-                    } catch (CommandException ce) {
-                        System.out.print("Something went wrong performing the setlevel command! " + ce);
-                        typoMessage(player);
                     } catch (Exception e) {
-                        System.out.println("Something went wrong performing the setlevel command! " + e);
-                        typoMessage(player);
+                        typoMessage(player, e);
                     }
                 }
             } else {
-                typoMessage(player);
+                typoMessage(player, null);
             }
         } else {
             System.out.println("Integration of console command was not done so far.");
@@ -42,8 +38,9 @@ public class SetLevelCommand implements CommandExecutor {
         return true;
     }
 
-    private void typoMessage(Player player){
+    private void typoMessage(Player player, Exception e){
         player.sendMessage("§c Something went wrong!");
         player.sendMessage("§2 Example: /setlevel <player> <level>");
+        System.out.println("Something went wrong performing the setlevel command! " + e);
     }
 }

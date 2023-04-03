@@ -20,16 +20,7 @@ public class TestCommand implements CommandExecutor {
 
         if (commandSender instanceof Player) {
             Player p = (Player) commandSender;
-            Inventory inventory = Bukkit.createInventory(p,9, "Admin-Panel");
 
-            ItemStack itemGod = new ItemStack(Material.LEGACY_GOLDEN_APPLE, 1);
-            ItemMeta itemGodMeta = itemGod.getItemMeta();
-
-            itemGodMeta.setDisplayName("Set God Mode");
-            itemGod.setItemMeta(itemGodMeta);
-            inventory.setItem(0, itemGod);
-
-            p.openInventory(inventory);
         }
 
         return true;

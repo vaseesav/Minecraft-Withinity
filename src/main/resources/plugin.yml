@@ -9,7 +9,7 @@ commands:
   god:
     description: Become invincible
     usage: /<command>
-    permission: withinity.godCommand
+    permission: withinity.admin.godCommand
 
   test:
     description: test tests test
@@ -19,8 +19,16 @@ commands:
   setlevel:
     description: Set your level
     usage: /<command> <player> <level>
-    permission: withinity.setLevel
+    permission: withinity.setLevelCommand
   admin:
     description: Administrator Panel
     usage: /<command>
     permission: withinity.admin.panelCommand
+  setwalkingspeed:
+    description: Set your walking speed
+    usage: /<command> <speed>
+    permission: withinity.admin.setWalkingspeedCommand
+  walkingspeedmenu:
+    description: Opens a menu to set your walking speed
+    usage: /<command>
+    permission: withinity.admin.setWalkingspeedMenuCommand
