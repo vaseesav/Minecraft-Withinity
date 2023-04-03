@@ -9,7 +9,7 @@ public class CommandManager {
         registerCommand("god", new GodModeCommand(), true);
         registerCommand("setlevel", new SetLevelCommand(), true);
         registerCommand("admin", new AdminPanelCommand(), true);
-        registerCommand("test", new TestCommand(), true);
+        registerCommand("test", new TestCommand(), false);
         registerCommand("setwalkingspeed", new SetWalkingSpeedCommand(), true);
         registerCommand("walkingspeedmenu", new SetWalkingSpeedMenuCommand(), true);
     }
