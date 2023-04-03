@@ -20,3 +20,7 @@ commands:
     description: Set your level
     usage: /<command> <player> <level>
     permission: withinity.setLevel
+  admin:
+    description: Administrator Panel
+    usage: /<command>
+    permission: withinity.admin.panelCommand

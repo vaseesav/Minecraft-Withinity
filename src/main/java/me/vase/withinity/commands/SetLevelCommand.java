@@ -35,6 +35,8 @@ public class SetLevelCommand implements CommandExecutor {
             } else {
                 typoMessage(player);
             }
+        } else {
+            System.out.println("Integration of console command was not done so far.");
         }
 
         return true;
