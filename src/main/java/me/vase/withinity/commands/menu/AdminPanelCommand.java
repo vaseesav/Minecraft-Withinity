@@ -1,4 +1,4 @@
-package me.vase.withinity.commands;
+package me.vase.withinity.commands.menu;
 
 import me.vase.withinity.utils.inventories.AdminPanelMenu;
 import org.bukkit.Bukkit;

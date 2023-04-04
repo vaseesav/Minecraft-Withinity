@@ -17,6 +17,8 @@ public class AdminPanelMenuClickHandler implements Listener {
             Withinity.getPlugin().getServer().dispatchCommand(player, "god");
         } else if (event.getCurrentItem().getType() == Material.DIAMOND_BOOTS) {
             Withinity.getPlugin().getServer().dispatchCommand(player, "walkingspeedmenu");
+        } else if (event.getCurrentItem().getType() == Material.FEATHER) {
+            Withinity.getPlugin().getServer().dispatchCommand(player, "fly");
         }
     }
 }

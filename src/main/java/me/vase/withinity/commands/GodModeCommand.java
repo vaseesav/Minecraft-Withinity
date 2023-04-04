@@ -11,14 +11,18 @@ public class GodModeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
 
         if (commandSender instanceof Player) {
-            Player p = (Player)commandSender;
+            Player player = (Player)commandSender;
 
-            if (p.isInvulnerable()) {
-                p.setInvulnerable(false);
-                p.sendMessage(ChatColor.RED + "God Mode has been disabled!");
+            if (player.isInvulnerable()) {
+                player.setInvulnerable(false);
+                player.setFoodLevel(20);
+                player.setSaturation(0);
+                player.sendMessage(ChatColor.RED + "God Mode has been disabled!");
             } else {
-                p.setInvulnerable(true);
-                p.sendMessage(ChatColor.GREEN + "God Mode has been enabled!");
+                player.setInvulnerable(true);
+                player.setFoodLevel(20);
+                player.setSaturation(20);
+                player.sendMessage(ChatColor.GREEN + "God Mode has been enabled!");
             }
         }
 

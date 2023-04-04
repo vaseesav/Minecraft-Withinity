@@ -20,7 +20,6 @@ public class TestCommand implements CommandExecutor {
 
         if (commandSender instanceof Player) {
             Player p = (Player) commandSender;
-
         }
 
         return true;

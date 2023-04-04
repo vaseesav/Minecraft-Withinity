@@ -1,4 +1,4 @@
-package me.vase.withinity.commands;
+package me.vase.withinity.commands.menu;
 
 import me.vase.withinity.utils.inventories.SetWalkingSpeedMenu;
 import org.bukkit.command.Command;

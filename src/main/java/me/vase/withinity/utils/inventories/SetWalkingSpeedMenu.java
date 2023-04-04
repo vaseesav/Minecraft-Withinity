@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 
 public class SetWalkingSpeedMenu {
     private final Inventory inventory;
@@ -18,12 +19,12 @@ public class SetWalkingSpeedMenu {
         ItemStack itemLess = new ItemStack(Material.STONE_BUTTON, 1);
         ItemStack itemMore = new ItemStack(Material.STONE_BUTTON, 1);
         ItemStack itemDefault = new ItemStack(Material.SPRUCE_SIGN, 1);
-        ItemStack itemBack = new ItemStack(Material.GRAY_STAINED_GLASS_PANE, 1);
+        ItemStack itemBack = new ItemStack(Material. PLAYER_HEAD, 1);
 
         ItemMeta itemLessMeta = itemLess.getItemMeta();
         ItemMeta itemMoreMeta = itemMore.getItemMeta();
         ItemMeta itemDefaultMeta = itemDefault.getItemMeta();
-        ItemMeta itemBackMeta = itemBack.getItemMeta();
+        ItemMeta itemBackMeta = (SkullMeta) itemBack.getItemMeta();
 
         itemLessMeta.setDisplayName("Less Walking Speed");
         itemLess.setItemMeta(itemLessMeta);
@@ -35,6 +36,7 @@ public class SetWalkingSpeedMenu {
         itemDefault.setItemMeta(itemDefaultMeta);
 
         itemBackMeta.setDisplayName("Back");
+        ((SkullMeta) itemBackMeta).setOwner("MHF_ArrowLeft");
         itemBack.setItemMeta(itemBackMeta);
 
         this.inventory.setItem(3, itemLess);

@@ -1,6 +1,8 @@
 package me.vase.withinity.commands;
 
 import me.vase.withinity.Withinity;
+import me.vase.withinity.commands.menu.AdminPanelCommand;
+import me.vase.withinity.commands.menu.SetWalkingSpeedMenuCommand;
 import org.bukkit.command.CommandExecutor;
 
 public class CommandManager {
@@ -12,6 +14,7 @@ public class CommandManager {
         registerCommand("test", new TestCommand(), false);
         registerCommand("setwalkingspeed", new SetWalkingSpeedCommand(), true);
         registerCommand("walkingspeedmenu", new SetWalkingSpeedMenuCommand(), true);
+        registerCommand("fly", new FlightCommand(), true);
     }
 
     public void registerCommand(String commandName, CommandExecutor commandExecutor, Boolean enabled) {
