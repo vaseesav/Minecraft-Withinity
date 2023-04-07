@@ -32,7 +32,7 @@ commands:
     permission: withinity.admin.setWalkingspeedCommand
 
   walkingspeedmenu:
-    description: Opens a menu to set your walking speed
+    description: Opens the menu to set your walking speed
     usage: /<command>
     permission: withinity.admin.setWalkingspeedMenuCommand
 
